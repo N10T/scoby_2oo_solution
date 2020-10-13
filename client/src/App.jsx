@@ -36,8 +36,6 @@ class App extends React.Component {
                 {...props}
                 displayForm={this.state.displayForm}
                 handleFormClose={this.handleClose}
-                items={this.state.items}
-                onSelectItem={this.onSelectItem}
               />
             )}
           />
