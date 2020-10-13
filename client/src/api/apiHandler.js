@@ -29,6 +29,9 @@ export default {
       .then((res) => res.data)
       .catch(errorHandler);
   },
+  logout() {
+    return service.delete("/api/auth/logout").catch(errorHandler);
+  },
 
   isLoggedIn() {
     return service

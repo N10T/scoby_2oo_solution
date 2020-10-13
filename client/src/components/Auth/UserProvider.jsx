@@ -16,13 +16,14 @@ class UserProvider extends React.Component {
         this.setState({ user: data, isLoggedIn: true, isLoading: false });
       })
       .catch((error) => {
-        console.log(error);
-        this.setState({ isLoggedIn: false });
+        this.setState({ isLoggedIn: false, isLoading: false });
       });
   }
 
   removeUser = () => {
-    this.setState({ user: null, isLoggedIn: false });
+    apiHandler.logout().then(() => {
+      this.setState({ user: null, isLoggedIn: false });
+    });
   };
 
   setUser = (userInfo) => {

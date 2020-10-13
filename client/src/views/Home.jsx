@@ -11,7 +11,6 @@ class Home extends React.Component {
     selectedItem: null,
     items: [],
   };
-
   componentDidMount() {
     apiHandler.getItems().then((data) => {
       this.setState({ items: data });
